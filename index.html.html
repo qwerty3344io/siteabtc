@@ -2,26 +2,38 @@
 <html lang="th">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=1024">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <title>Virtual ABTC คือ Mobile Application แทนบัตรได้แล้ว</title>
   <link href="https://fonts.googleapis.com/css2?family=Prompt&display=swap" rel="stylesheet">
 
-  <link rel="stylesheet" href="/abtc/assets/css/Registerpage.css">
+  <link rel="stylesheet" href="assets/css/index.css">
+  <link rel="stylesheet" href="assets/css/index.mobile.css" media="(max-width: 900px)">
+  <link rel="stylesheet" href="assets/css/abtc-nav-clickfix.css">
 </head>
 <body>
   <!-- Header -->
   <header class="header">
-    <div class="header-container">
-      <img src="/abtc/assets/img/logoapec.png" alt="APEC Logo" class="logo">
-      <nav class="nav">
-        <a href="/abtc/assets/html/abtcregister.html">สมัครบัตร ABTC ปกติ</a>
-        <a href="Premium Service.html">Premium Service</a>
-        <a href="ThaiOverseas.html">คนไทยในต่างประเทศ</a>
-        <a href="https://abtc-jsccib.org/about-us.html" target="_blank" rel="noopener">ตรวจสอบสถานะการอนุมัติบัตร</a>
-      </nav>
-      <button class="login-btn" id="openLoginModal">เข้าสู่ระบบ</button>
-    </div>
-  </header>
+  <div class="header-container">
+    <a href="./" class="logo-link" aria-label="หน้าแรก ABTC">
+      <img src="assets/img/logoapec.png" alt="APEC Logo" class="logo">
+    </a>
+    <!-- ปุ่ม Hamburger -->
+    <button class="nav-toggle" id="navToggle" aria-label="สลับเมนู" aria-expanded="false" aria-controls="siteNav">
+      <span></span><span></span><span></span>
+    </button>
+   <!-- เมนูนำทาง -->
+    <nav class="nav" id="siteNav" aria-label="หลัก">
+      <a href="abtc-register.html">สมัครบัตร ABTC ปกติ</a>
+      <a href="premium-service.html">Premium Service</a>
+      <a href="thai-overseas.html">คนไทยในต่างประเทศ</a>
+      <a href="https://abtc-jsccib.org/about-us.html" target="_blank" rel="noopener">ตรวจสอบสถานะการอนุมัติบัตร</a>
+    </nav>
+ <button class="login-btn" id="openLoginModal" type="button">เข้าสู่ระบบ</button>
+  </div>
+  </div>
+</header>
+  <div class="nav-backdrop" id="navBackdrop" hidden></div>
+
   <!-- Main Section -->
   <section class="main-hero">
   <div class="hero-left">
@@ -31,14 +43,11 @@
     <div class="hero-desc">
       ผู้ที่ประสงค์จะใช้งานระบบ Virtual ABTC ต้องเข้าไปขอเปิดใช้งานล่วงหน้าก่อนเดินทาง 1 สัปดาห์ แจ้งผ่านเว็บไซต์ 
       <a href="https://abtc-jsccib.org" target="_blank" class="link">https://abtc-jsccib.org</a><br>
-      ใช้เดินทางได้ 18 เขตเศรษฐกิจ ได้แก่
-    </div>
-   <div class="hero-countries">
+      ใช้เดินทางได้ 18 เขตเศรษฐกิจ ได้แก่ 
   Australia • Brunei Darussalam • Chile • China • Chinese Taipei • Hong Kong •
   Indonesia • Japan • Korea • Malaysia • Mexico • New Zealand • Papua New Guinea •
   Peru • Philippines • Singapore • Viet Nam • Thailand
-</div>
-
+</div>   
     <!-- รายละเอียดเพิ่มเติม -->
     <a href="https://abtc-jsccib.org/%E0%B8%84%E0%B8%B9%E0%B9%88%E0%B8%A1%E0%B8%B7%E0%B8%AD%20%E0%B8%81%E0%B8%B2%E0%B8%A3%E0%B9%83%E0%B8%8A%E0%B9%89%20Virtual%20ABTC.pdf" class="more-button" target="_blank" rel="noopener noreferrer"> 
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon">
@@ -52,16 +61,16 @@
   <div class="hero-right">
     <div class="hero-logos">
       <a href="https://www.jsccib.org/home" target="_blank">
-        <img src="/abtc/assets/img/jsccib.png" alt="JSCCIB" height="50">
+        <img src="assets/img/jsccib.png" alt="JSCCIB" height="50">
       </a>
       <a href="https://www.thaichamber.org" target="_blank">
-        <img src="/abtc/assets/img/thaichamber.png" alt="THAICHAMBER" height="50">
+        <img src="assets/img/thaichamber.png" alt="THAICHAMBER" height="50">
       </a>
       <a href="https://www.fti.or.th/" target="_blank">
-        <img src="/abtc/assets/img/FTI.png" alt="FTI" height="50">
+        <img src="assets/img/FTI.png" alt="FTI" height="50">
       </a>
       <a href="https://www.tba.or.th/home" target="_blank">
-        <img src="/abtc/assets/img/boi.png" alt="BOI" height="50">
+        <img src="assets/img/boi.png" alt="BOI" height="50">
       </a>
     </div>
   </div>
@@ -71,7 +80,7 @@
 
   <section class="info-section">
     <div class="info-title">
-      <img src="/abtc/assets/img/card.png" alt="info" class="info-icon">
+      <img src="assets/img/card.png" alt="info" class="info-icon">
       <span>APEC Business Travel Card (ABTC)<br>บัตรเดินทางสำหรับนักธุรกิจเอเปค</span>
     </div>
     <div class="info-main">
@@ -87,7 +96,7 @@
   <div class="video-card">
     <div class="video-wrapper">
       <div class="video-thumbnail" onclick="playVideo(this)">
-        <img src="/abtc/assets/img/covervideo.jpg" alt="ABTC Thumbnail">
+        <img src="assets/img/covervideo.jpg" alt="ABTC Thumbnail">
       </div>
 
       <iframe
@@ -108,23 +117,23 @@
       </div>
       <div class="info-checklist">
         <div class="check-item">
-          <img src="/abtc/assets/img/Frame 1.png" alt="check" class="check-icon1">
+          <img src="assets/img/Frame 1.png" alt="check" class="check-icon1">
           <span>ผู้สมัครบัตร ABTC จะต้องทำงานอยู่ในบริษัท ห้างหุ้นส่วนจำกัด ที่เป็นสมาชิกของหน่วยงานใดหน่วยงานหนึ่ง ได้แก่ หอการค้าไทย สภาหอการค้าแห่งประเทศไทย สภาอุตสาหกรรมแห่งประเทศไทย หรือ สมาคมธนาคารไทย</span>
         </div>
         <div class="check-item">
-          <img src="/abtc/assets/img/Frame 1.png" alt="check" class="check-icon2">
+          <img src="assets/img/Frame 1.png" alt="check" class="check-icon2">
           <span>บริษัทต้องจดทะเบียนมาไม่น้อยกว่า 3 ปี ถ้าบริษัทที่จดทะเบียน 1 ปี แต่ไม่ถึง 3 ปี ทุนจดทะเบียนต้อง 1 ล้านบาทขึ้นไป</span>
         </div>
         <div class="check-item">
-          <img src="/abtc/assets/img/Frame 1.png" alt="check" class="check-icon3">
+          <img src="assets/img/Frame 1.png" alt="check" class="check-icon3">
           <span>กรณีเป็นผู้ถือหุ้น บอจ.5 ต้องถือหุ้น 10% ของทุนจดทะเบียน ผู้ถือหุ้น บอจ. 6 ต้องถือหุ้น 3 % ของทุนจดทะเบียน</span>
         </div>
         <div class="check-item">
-          <img src="/abtc/assets/img/Frame 1.png" alt="check" class="check-icon4">
+          <img src="assets/img/Frame 1.png" alt="check" class="check-icon4">
           <span>ผู้สมัครต้องมีอายุ 25 ปีบริบูรณ์ขึ้นไปและผู้สมัครต้องมีสัญชาติไทย ถือหนังสือเดินทางไทยเท่านั้น</span>
         </div>
         <div class="check-item">
-          <img src="/abtc/assets/img/Frame 1.png" alt="check" class="check-icon5">
+          <img src="assets/img/Frame 1.png" alt="check" class="check-icon5">
           <span>ผู้สมัครต้องอยู่ในตำแหน่งผู้จัดการ เงินเดือน 50,000 บาท ขึ้นไป</span>
         </div>
       </div>
@@ -159,12 +168,12 @@
       <section class="ft-col ft-center">
         <h3 class="ft-title">ติดตามข่าวสารได้ที่</h3>
         <div class="ft-brand">
-          <img src="/abtc/assets/img/jsccib.png" alt="JSCCIB" class="brand-logo">
+          <img src="assets/img/jsccib.png" alt="JSCCIB" class="brand-logo">
           <a href="https://www.facebook.com/ABTC.TH/" target="_blank" rel="noopener">APEC Card Thailand</a>
         </div>
 
         <div class="ft-qr">
-          <img src="/abtc/assets/img/qr.jpg" alt="QR Line: @abtc-thailand">
+          <img src="assets/img/qr.jpg" alt="QR Line: @abtc-thailand">
           <div class="qr-caption">
             <a href="https://page.line.me/abtc-thailand" target="_blank" rel="noopener">@abtc-thailand</a>
           </div>
@@ -187,10 +196,10 @@
         </address>
           <div class="store-badges">
           <a href="https://play.google.com/store/apps/details?id=au.gov.homeaffairs.abtc&pcampaignid=web_share" target="_blank" rel="noopener">
-            <img src="/abtc/assets/img/play.png" alt="Get it on Google Play">
+            <img src="assets/img/play.png" alt="Get it on Google Play">
           </a>
           <a href="https://apps.apple.com/th/app/abtc/id1531812485?l=th" target="_blank" rel="noopener">
-            <img src="/abtc/assets/img/appios.png" alt="Download on the App Store">
+            <img src="assets/img/appios.png" alt="Download on the App Store">
           </a>
         </div>
       </section>
@@ -227,6 +236,5 @@
   </section>
 </div>
 </body>
-<script src="/abtc/assets/js/Registerpage.js"></script>
-
+<script src="assets/js/index.js"></script>
 </html>
