@@ -388,7 +388,7 @@
   background-size: cover; 
   background-repeat: no-repeat; 
   justify-content: center;
-  background-image: url('/assets/img/Footerimg.png');
+  background-image: url('../img/Footerimg.png');
   
 }
 
