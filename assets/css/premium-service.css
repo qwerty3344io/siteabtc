@@ -93,7 +93,7 @@ a:hover {
 }
 
 .main-hero {
-  background: url('/assets/img/Bg2.jpg') no-repeat center/cover;
+  background: url('../img/Bg2.jpg') no-repeat center/cover;
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
@@ -1004,3 +1004,4 @@ text-decoration: none;
   opacity: 1 !important;
   filter: none !important;
 }
+
