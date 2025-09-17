@@ -1,6 +1,7 @@
 
 
 .main-hero {
+  background: url('../img/bgindex') no-repeat center/cover; 
   position: relative;
   display: flex;
   justify-content: space-between;
@@ -9,10 +10,6 @@
   margin: 0 auto;
   padding: 46px 24px 14px 24px;
   gap: 48px;
-}
-.main-hero {
-  background: url('../img/bgindex') no-repeat center/cover; 
-  border-radius: 0px; /* ถ้าต้องการขอบมน */
 }
 .hero-left {
   flex: 1.3;
