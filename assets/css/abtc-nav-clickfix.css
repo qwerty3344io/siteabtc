@@ -1,0 +1,126 @@
+
+/* === ABTC Mobile Drawer: Click-through & Layer Fix === */
+
+/* Ensure drawer is above everything and fully clickable */
+#siteNav{ z-index: 100003 !important; pointer-events: auto !important; }
+#siteNav *{ pointer-events: auto !important; position: relative; z-index: 1; }
+
+/* Backdrop just under the drawer (still accepts tap to close if you keep it visible) */
+#navBackdrop{ z-index: 100001 !important; }
+#navBackdrop[hidden]{ display: none !important; pointer-events: none !important; }
+
+/* When menu is open (we add .no-scroll on <body>), disable clicks on sticky UI behind it */
+.no-scroll .signup-button,
+.no-scroll .abtc-banner-overlay,
+.no-scroll .main-hero,
+.no-scroll header,
+.no-scroll .header{
+  pointer-events: none !important;
+}
+
+/* Keep the drawer clickable even during .no-scroll */
+.no-scroll #siteNav,
+.no-scroll #siteNav *{
+  pointer-events: auto !important;
+}
+
+/* Optional: remove any dimming/filters to keep colors vivid */
+#siteNav{ background:#fff !important; filter:none !important; opacity:1 !important; }
+#navBackdrop{ background: transparent !important; backdrop-filter:none !important; -webkit-backdrop-filter:none !important; }
+
+/* ========== Mobile: ย้าย hamburger ไปชิดปุ่มเข้าสู่ระบบ (ขวาสุด) ========== */
+@media (max-width: 900px) {
+  /* header เป็น flex อยู่แล้ว เพิ่มความชัดเรื่องลำดับ */
+  .header .header-container {
+    display: flex;
+    align-items: center;
+    gap: 12px;               /* ปรับช่องว่างรวม */
+  }
+
+  /* ลำดับซ้าย→ขวา: โลโก้ (1) → nav (2) → เข้าสู่ระบบ (3) → hamburger (4) */
+  .header .logo-link { order: 1; }
+  #siteNav { order: 2; }     /* เมนูจริงจะเป็น drawer อยู่แล้ว */
+  .login-btn { 
+    order: 3; 
+    margin-left: auto;       /* ดันกลุ่มทางขวา */
+  }
+  #navToggle {
+    order: 4;
+    display: inline-grid;    /* ให้มองเห็นบน mobile */
+    margin-left: 8px;        /* เว้นห่างปุ่มเข้าสู่ระบบเล็กน้อย */
+  }
+  .hero-logos {
+  display: flex;
+  gap: 0px;
+  margin-top: 10px;
+  margin-right: 0px;
+  padding: 20px;
+  border-radius: 10px 10px 10px 10px;
+  background-color: rgba(255, 255, 255, 0.7);
+}
+
+.video-thumbnail img {
+  width: 80%;
+  height: 80%;
+  margin-left: auto;   /* ดันรูปไปทางขวา */
+  margin-right: 0px;
+  display: block;
+  cursor: pointer;
+  border-radius: 10px 10px 10px 10px;
+}
+}
+
+/* ========== Desktop: ซ่อน hamburger ========== */
+@media (min-width: 901px) {
+  #navToggle { 
+    display: none !important;   /* บังคับซ่อนบนเดสก์ท็อป */
+  }
+}
+
+/* ทำให้ทั้งแถบเป็นปุ่มเดียว (ไม่ใช่เฉพาะตัวอักษร) และจัดศูนย์แนวตั้ง */
+#siteNav a{
+  display: flex;               /* หรือ block ก็ได้ แต่ flex จัดแนวตั้งได้เนียนกว่า */
+  align-items: center;
+  line-height: 1.4;
+  padding: 14px 14px;
+  position: relative;
+  z-index: 2;                  /* กันถูก element โปร่งใสทับ */
+  -webkit-tap-highlight-color: transparent;
+  touch-action: manipulation;  /* ลด delay/พฤติกรรมแปลกเวลาทัช */
+}
+
+/* ยืนยันว่าลิงก์และลูก ๆ รับคลิกเต็มที่ */
+#siteNav a, #siteNav a *{
+  pointer-events: auto !important;
+}
+
+/* ตัว drawer เองเร่งการเรนเดอร์/คมชัด hit box */
+#siteNav{
+  will-change: transform;
+  transform: translate3d(0,0,0);
+  -webkit-overflow-scrolling: touch;
+}
+
+/* ===== Desktop (ค่าเดิมที่คุณมีอยู่แล้ว) ===== */
+/* ไม่ต้องแก้อะไรเลย hero-right จะอยู่ตำแหน่งเดิม */
+
+/* ===== Mobile ปรับแต่งเฉพาะ ===== */
+@media (max-width: 900px) 
+  .hero-right {
+    display: block;       /* ให้แสดง */
+    margin-top: 16px;     /* ขยับลงเล็กน้อย */
+  }
+
+  .hero-right .hero-logos {
+    display: flex;
+    justify-content: center; /* จัดกึ่งกลางเวลาหน้าจอเล็ก */
+    flex-wrap: wrap;         /* ถ้าล้นจอ ให้ตัดลงบรรทัดใหม่ */
+    gap: 12px;
+  }
+
+  .hero-right .hero-logos img {
+    height: 50px; /* ย่อโลโก้ลงสำหรับมือถือ */
+    width: auto;
+  }
+
+

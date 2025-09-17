@@ -1,0 +1,81 @@
+
+/* ===== Mobile NAV Drawer & Backdrop ===== */
+@media (max-width: 900px){
+  .nav-toggle{ display:block; }
+
+  .nav{
+    position: fixed;
+    top: 0; right: 0; bottom: 0;
+    width: min(86vw, 340px);
+    display: none;
+    flex-direction: column;
+    padding: 14px;
+    background: #ffffff;
+    border-left: 1px solid #eaeaea;
+    box-shadow: -18px 0 40px rgba(0,0,0,.18);
+    z-index: 1200;
+    overflow-y: auto;
+  }
+  .nav.is-open{ display:flex; }
+
+  .nav a{
+    font-size: 1.06rem;
+    font-weight: 700;
+    color: #162032;
+    padding: 14px 12px;
+    border-radius: 12px;
+    background: #f6f8fb;
+    margin-bottom: 10px;
+    text-decoration: none;
+  }
+  .nav a:hover{ background:#eaf0ff; }
+
+  .nav-backdrop{
+    position: fixed; inset: 0;
+    background: rgba(15,18,23,.45);
+    z-index: 1190;
+    backdrop-filter: blur(1px);
+  }
+  .nav-backdrop[hidden]{ display:none; }
+}
+
+/* ===== Mobile page look distinct from desktop ===== */
+@media (max-width: 900px){
+  .header-container{ gap:12px; padding: 8px 14px; }
+  .logo{ height:56px; }
+  .login-btn{ padding:8px 14px; font-size:1rem; border-radius:8px; }
+
+  .main-hero{
+    display:block;
+    padding: 18px 14px 90px;
+    background: linear-gradient( to bottom, rgba(16,35,61,.70), rgba(16,35,61,.80) ),
+                url('/assets/img/Bg2.jpg') no-repeat center/cover;
+  }
+  .hero-title{ font-size:1.5rem; margin-top:6px; }
+  .hero-desc{  font-size:1rem; opacity:.95; }
+
+  .hero-logos{ display:none; }
+  .hero-countries{ display:none; }
+
+  .signup-button{
+    position: fixed;
+    left: 14px; right: 14px; bottom: 14px;
+    display:flex; justify-content:center; align-items:center;
+    padding: 14px 18px;
+    font-size: 1.05rem; font-weight:800;
+    border-radius: 14px;
+    background: #e1cf91; color:#112947;
+    box-shadow: 0 10px 24px rgba(0,0,0,.22);
+    z-index: 1100;
+  }
+
+  .info-section{ margin-top: 14px; padding:16px; }
+  .info-main{ display:block; }
+  .info-checklist{ margin-top:16px; }
+}
+
+/* Hamburger to X animation */
+.nav-toggle.active span:nth-child(1){ transform: translateY(8px) rotate(45deg); }
+.nav-toggle.active span:nth-child(2){ opacity:0; }
+.nav-toggle.active span:nth-child(3){ transform: translateY(-8px) rotate(-45deg); }
+.nav-toggle span{ transition: transform .18s ease, opacity .12s ease; }
