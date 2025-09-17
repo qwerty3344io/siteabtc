@@ -1,7 +1,7 @@
 
 
 .main-hero {
-  position: relative;
+  background: url('../img/bgindex.png') no-repeat center/cover;
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
@@ -9,11 +9,11 @@
   margin: 0 auto;
   padding: 46px 24px 14px 24px;
   gap: 48px;
-  background-image: url('../img/bg1.jpg');
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover;
-  color: #fff;
+  position: relative;
+  flex-wrap: wrap;
+  padding: 35px;
+  background-color: #0f2b46; 
+  color: white;
 }
 .hero-left {
   flex: 1.3;
