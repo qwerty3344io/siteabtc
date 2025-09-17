@@ -1,7 +1,6 @@
 
 
 .main-hero {
-  background: url('../img/bgindex') no-repeat center/cover; 
   position: relative;
   display: flex;
   justify-content: space-between;
@@ -10,6 +9,11 @@
   margin: 0 auto;
   padding: 46px 24px 14px 24px;
   gap: 48px;
+  background-image: url('../img/bg1.jpg');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  color: #fff;
 }
 .hero-left {
   flex: 1.3;
