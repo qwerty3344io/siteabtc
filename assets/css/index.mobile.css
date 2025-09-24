@@ -2,7 +2,6 @@
 /* ===== Mobile NAV Drawer & Backdrop ===== */
 @media (max-width: 900px){
   .nav-toggle{ display:block; }
-  .desktop-only { display: none; }
   .mobile-only { display: inline-block; }
   .nav{
     position: fixed;
