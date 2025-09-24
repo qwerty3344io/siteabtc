@@ -55,7 +55,7 @@
   .hero-desc{  font-size:1rem; opacity:.95; }
 
   .hero-logos{ display:none; }
-  .hero-countries{ display:none; }
+  .hero-countries
 
   .signup-button{
     position: fixed;
