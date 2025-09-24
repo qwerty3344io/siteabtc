@@ -1,4 +1,6 @@
-
+.mobile-only {
+  display: none;
+}
 /* ===== Mobile NAV Drawer & Backdrop ===== */
 @media (max-width: 900px){
   .nav-toggle{ display:block; }
