@@ -1,13 +1,8 @@
 
-/* Mobile (จอเล็กกว่า 900px) ไม่แสดง */
-@media (max-width: 900px) {
-  .hero-countries {
-    display: none;
- .hero-countries{ display:none !important; }
- .mobile-only{ display:inline !important; }
-}
 /* ===== Mobile NAV Drawer & Backdrop ===== */
 @media (max-width: 900px){
+  .nav-toggle{ display:block; }
+
   .nav{
     position: fixed;
     top: 0; right: 0; bottom: 0;
@@ -60,7 +55,12 @@
   .hero-desc{  font-size:1rem; opacity:.95; }
 
   .hero-logos{ display:none; }
-
+  .hero-countries {
+  font-size: 0.55rem;
+  color: #ffffff;
+  margin-bottom: 10px;
+  word-wrap: break-word; /* ถ้ายาวเกินให้ตัดเอง */
+}
 
   .signup-button{
     position: fixed;
