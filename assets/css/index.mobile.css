@@ -2,7 +2,6 @@
 /* ===== Mobile NAV Drawer & Backdrop ===== */
 @media (max-width: 900px){
   .nav-toggle{ display:block; }
-.hero-countries{ display:none !important; }
   .nav{
     position: fixed;
     top: 0; right: 0; bottom: 0;
