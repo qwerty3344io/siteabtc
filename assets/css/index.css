@@ -11,8 +11,8 @@
   gap: 48px;
 }
 .main-hero {
-  background: url('../img/bgindex.png') no-repeat center/cover;
-  border-radius: 0px; /* ถ้าต้องการขอบมน */
+ background: url('../img/bgindex.png') no-repeat center/cover;
+border-radius: 0px; /* ถ้าต้องการขอบมน */
 }
 .hero-left {
   flex: 1.3;
