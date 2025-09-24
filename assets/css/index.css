@@ -1,7 +1,6 @@
 
 
 .main-hero {
-  background: url('../img/bgindex.png') no-repeat center/cover;
   position: relative;
   display: flex;
   justify-content: space-between;
@@ -10,6 +9,10 @@
   margin: 0 auto;
   padding: 46px 24px 14px 24px;
   gap: 48px;
+}
+.main-hero {
+  background: url('../img/bgindex.png') no-repeat center/cover;
+  border-radius: 0px; /* ถ้าต้องการขอบมน */
 }
 .hero-left {
   flex: 1.3;
@@ -41,6 +44,12 @@
   word-wrap: break-word; /* ถ้ายาวเกินให้ตัดเอง */
   white-space: nowrap;     /* ไม่ตัดบรรทัด */
 }
+
+
+.main-hero {
+  position: relative; /* ทำให้ลูกหลานวาง absolute ได้ */
+}
+
 .hero-extra-btn {
   position: absolute;
   top: 100px;    /* ปรับค่าตามตำแหน่งจริง */
@@ -73,7 +82,7 @@
 .info-section {
   background: #fff;
   border-radius: 18px;
-  box-shadow: 0 2px 18px #00336610;
+  box-shadow: 0 2px 18px #930e0510;
   max-width: 1080px;
   margin: 32px auto 0 auto;
   padding: 22px 28px 18px 28px;
@@ -339,6 +348,17 @@
 @media (max-width: 440px) {
   .login-modal { width: 98vw; min-width: 0; padding: 18px 6vw 20px 6vw; }
 }
+.main-hero {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  padding: 35px;
+  background-color: #0f2b46; /* หรือพื้นหลังที่คุณใช้ */
+  color: white;
+  max-width: none;
+}
+
 .signup-button {
   position: absolute;
   bottom: 20px;
@@ -379,6 +399,7 @@
   background-repeat: no-repeat; 
   justify-content: center;
   background-image: url('../img/Footerimg.png');
+  
 }
 
 .abtc-banner-overlay h2 {
@@ -962,6 +983,19 @@ a:hover {
   margin-left: auto;
 }
 .login-btn:hover { background: #274377; }
+
+.main-hero {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  max-width: 1080px;
+  margin: 0 auto;
+  padding: 46px 24px 14px 24px;
+  gap: 48px;
+  background: url('/assets/img/Bg 1.png') no-repeat center/cover;
+  color: #fff;
+}
 .hero-left { flex: 1.3; min-width: 350px; }
 .hero-title {
   font-size: 2.1rem;
@@ -978,7 +1012,7 @@ a:hover {
   display: flex;
   gap: 20px;
   margin-top: -46px;
-  margin-right: -25px;
+  margin-right: -24px;
   padding: 20px;
   border-radius: 0px 0px 0px 40px;
   background-color: rgba(255, 255, 255, 0.7);
@@ -1100,6 +1134,19 @@ a:hover {
   margin-top: 1rem;
   text-align: center;
   font-weight: bold;
+}
+
+.abtc-banner-overlay {
+  display: flex;
+  width: 100%;
+  height: 350px;
+  margin-top: 30px;
+  flex-direction: column;
+  align-items: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  justify-content: center;
+  background-image: url('/assets/img/Footerimg.png');
 }
 .abtc-banner-overlay h2 {
   color: #fff;
@@ -1283,7 +1330,7 @@ a:hover {
 }
 .login-link:hover { color: #5ee7df; text-decoration: underline; }
 .login-modal-note {
-  margin-top: 18px; font-size: 0.97rem; color: #a7f3c5;
+  margin-top: 18px; font-size: 0.97rem; color: #ffffff;
   border-radius: 7px; padding: 0;
 }
 .note-title { display: block; font-weight: bold; color: #5ee7df; margin-bottom: 3px; }
