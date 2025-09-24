@@ -63,6 +63,12 @@
     box-shadow: 0 10px 24px rgba(0,0,0,.22);
     z-index: 1100;
   }
+  .hero-countries {
+  font-size: 0.55rem;
+  color: #ffffff;
+  margin-bottom: 10px;
+  word-wrap: break-word; /* ถ้ายาวเกินให้ตัดเอง */
+}
 
   .info-section{ margin-top: 14px; padding:16px; }
   .info-main{ display:block; }
