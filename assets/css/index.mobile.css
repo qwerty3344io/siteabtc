@@ -55,12 +55,9 @@
   .hero-desc{  font-size:1rem; opacity:.95; }
 
   .hero-logos{ display:none; }
-  .hero-countries {
-  font-size: 0.55rem;
-  color: #ffffff;
-  margin-bottom: 10px;
-  word-wrap: break-word; /* ถ้ายาวเกินให้ตัดเอง */
-}
+   .hero-countries {
+    display: none;
+  }
 
   .signup-button{
     position: fixed;
