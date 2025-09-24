@@ -38,7 +38,6 @@
   font-size: 1.6rem;
   color: #ffffff;
   margin-bottom: 10px;
-  white-space: nowrap;     /* ไม่ตัดบรรทัด */
   overflow-x: auto;        /* ล้นแล้วเลื่อนขวา-ซ้ายได้ */
   overflow-y: hidden;
   -webkit-overflow-scrolling: touch; 
