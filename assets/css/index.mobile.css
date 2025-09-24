@@ -66,6 +66,11 @@
   .hero-countries {
   display: none;
 }
+  .mobile-only {
+    display: inline-block;  /* หรือ block ตามต้องการ */
+    font-size: 0.9rem;
+    color: #ab0b0b;
+  }
 
   .info-section{ margin-top: 14px; padding:16px; }
   .info-main{ display:block; }
