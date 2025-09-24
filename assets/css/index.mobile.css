@@ -1,6 +1,4 @@
-.mobile-only {
-  display: none;
-}
+
 /* ===== Mobile NAV Drawer & Backdrop ===== */
 @media (max-width: 900px){
   .nav-toggle{ display:block; }
@@ -84,3 +82,10 @@
 .nav-toggle.active span:nth-child(2){ opacity:0; }
 .nav-toggle.active span:nth-child(3){ transform: translateY(-8px) rotate(-45deg); }
 .nav-toggle span{ transition: transform .18s ease, opacity .12s ease; }
+/* ซ่อนปกติ */
+.mobile-only { display: none !important; }
+
+/* ต้องเป็นจอแคบ + เป็นทัชเท่านั้น */
+@media (max-width: 900px) and (any-hover: none) and (pointer: coarse) {
+  .mobile-only { display: inline-block !important; }
+}
