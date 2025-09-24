@@ -35,15 +35,12 @@
   color: #18b03c;
 }
 .hero-countries {
-  font-size: 1.6rem;
+  font-size: 1.2rem;
   color: #ffffff;
   margin-bottom: 10px;
-  overflow-x: auto;        /* ล้นแล้วเลื่อนขวา-ซ้ายได้ */
-  overflow-y: hidden;
-  -webkit-overflow-scrolling: touch; 
+  word-wrap: break-word; /* ถ้ายาวเกินให้ตัดเอง */
+  white-space: nowrap;     /* ไม่ตัดบรรทัด */
 }
-.hero-countries::-webkit-scrollbar { height: 15px; }
-.hero-countries::-webkit-scrollbar-thumb { background: rgb(255, 255, 255); border-radius: 3px; }
 .hero-extra-btn {
   position: absolute;
   top: 100px;    /* ปรับค่าตามตำแหน่งจริง */
@@ -977,17 +974,6 @@ a:hover {
 .highlight-green { color: #3cb371; }
 .hero-desc { font-size: 1.06rem; margin-bottom: 14px; color: #fff; }
 .hero-desc .link { color: #18b03c; }
-.hero-countries {
-  font-size: 1.8rem;
-  color: #fff;
-  margin-bottom: 10px;
-  white-space: nowrap;
-  overflow-x: auto;
-  -webkit-overflow-scrolling: touch;
-}
-.hero-countries::-webkit-scrollbar { height: 15px; }
-.hero-countries::-webkit-scrollbar-thumb { background: #fff; border-radius: 3px; }
-
 .hero-logos {
   display: flex;
   gap: 20px;
