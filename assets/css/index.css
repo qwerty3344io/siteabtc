@@ -347,17 +347,6 @@
 @media (max-width: 440px) {
   .login-modal { width: 98vw; min-width: 0; padding: 18px 6vw 20px 6vw; }
 }
-.main-hero {
-  position: relative;
-  display: flex;
-  justify-content: space-between;
-  flex-wrap: wrap;
-  padding: 35px;
-  background-color: #0f2b46; /* หรือพื้นหลังที่คุณใช้ */
-  color: white;
-  max-width: none;
-}
-
 .signup-button {
   position: absolute;
   bottom: 20px;
@@ -982,18 +971,6 @@ a:hover {
   margin-left: auto;
 }
 .login-btn:hover { background: #274377; }
-
-.main-hero {
-  position: relative;
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
-  max-width: 1080px;
-  margin: 0 auto;
-  padding: 46px 24px 14px 24px;
-  gap: 48px;
-  background: url('/assets/img/Bg 1.png') no-repeat center/cover;
-  color: #fff;
 }
 .hero-left { flex: 1.3; min-width: 350px; }
 .hero-title {
@@ -1145,7 +1122,7 @@ a:hover {
   background-size: cover;
   background-repeat: no-repeat;
   justify-content: center;
-  background-image: url('/assets/img/Footerimg.png');
+  background-image: url('../img/Footerimg.png');
 }
 .abtc-banner-overlay h2 {
   color: #fff;
