@@ -1,12 +1,6 @@
 
 /* ===== Mobile NAV Drawer & Backdrop ===== */
 @media (max-width: 900px){
-  .nav-toggle{ display:block; }
-    .mobile-only {display: inline-block; 
-    font-size: 0.9rem;
-    color: #ab0b0b;
-  }
-  .hero-countries 
   .nav{
     position: fixed;
     top: 0; right: 0; bottom: 0;
