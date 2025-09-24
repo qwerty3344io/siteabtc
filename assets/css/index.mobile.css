@@ -1,14 +1,10 @@
-.hero-countries {
-  display: inline-block;  /* หรือ block ตามที่ต้องการ */
-  font-size: 0.9rem;
-  color: #ab0b0b;
-}
 
 /* Mobile (จอเล็กกว่า 900px) ไม่แสดง */
 @media (max-width: 900px) {
   .hero-countries {
     display: none;
-  }
+ .hero-countries{ display:none !important; }
+ .mobile-only{ display:inline !important; }
 }
 /* ===== Mobile NAV Drawer & Backdrop ===== */
 @media (max-width: 900px){
