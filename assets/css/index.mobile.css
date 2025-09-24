@@ -64,10 +64,7 @@
     z-index: 1100;
   }
   .hero-countries {
-  font-size: 0.55rem;
-  color: #ffffff;
-  margin-bottom: 10px;
-  word-wrap: break-word; /* ถ้ายาวเกินให้ตัดเอง */
+  display: none;
 }
 
   .info-section{ margin-top: 14px; padding:16px; }
