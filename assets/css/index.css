@@ -35,10 +35,9 @@
   color: #18b03c;
 }
 .hero-countries {
-  font-size: 1.8rem;
+  font-size: 1.6rem;
   color: #ffffff;
   margin-bottom: 10px;
-  word-wrap: break-word; /* ถ้ายาวเกินให้ตัดเอง */
   white-space: nowrap;     /* ไม่ตัดบรรทัด */
   overflow-x: auto;        /* ล้นแล้วเลื่อนขวา-ซ้ายได้ */
   overflow-y: hidden;
