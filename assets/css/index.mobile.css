@@ -3,6 +3,7 @@
 @media (max-width: 900px){
   .nav-toggle{ display:block; }
   .mobile-only { display: inline-block; }
+  .hero-countries {display: none;}
   .nav{
     position: fixed;
     top: 0; right: 0; bottom: 0;
