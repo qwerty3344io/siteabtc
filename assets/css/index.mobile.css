@@ -2,7 +2,10 @@
 /* ===== Mobile NAV Drawer & Backdrop ===== */
 @media (max-width: 900px){
   .nav-toggle{ display:block; }
-  .mobile-only { display: inline-block; }
+    .mobile-only {display: inline-block; 
+    font-size: 0.9rem;
+    color: #ab0b0b;
+  }
   .hero-countries {display: none;}
   .nav{
     position: fixed;
@@ -56,7 +59,7 @@
   .hero-desc{  font-size:1rem; opacity:.95; }
 
   .hero-logos{ display:none; }
-  .hero-countries
+
 
   .signup-button{
     position: fixed;
