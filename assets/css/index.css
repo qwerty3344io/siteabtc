@@ -2,7 +2,7 @@
    Base & Variables
 ========================= */
 :root{
-  --max: 1080px;
+  --max: 1200px;
   --nav-width: min(86vw, 340px);
   --brand: #112947;
   --accent: #e1cf91;
@@ -213,7 +213,7 @@ a:hover { text-decoration: underline; }
 }
 .side-slot{
   position: absolute; top:0; left:50%;
-  margin-left: calc(540px + 15px);
+   margin-left: calc((var(--max) / 2) + 15px);
   width: 320px; z-index: 2;
 }
 @media (max-width: 1440px){
@@ -326,7 +326,7 @@ a:hover { text-decoration: underline; }
   font-family:'Prompt', sans-serif;
 }
 .footer-inner{
-  max-width: 1200px;
+  max-width: var(--max);
   margin: 0 auto;
   padding: 40px 24px 16px;
 }
