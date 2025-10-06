@@ -2,6 +2,7 @@
 /* ===== Mobile NAV Drawer & Backdrop ===== */
 @media (max-width: 900px){
   .nav-toggle{ display:block; }
+
   .nav{
     position: fixed;
     top: 0; right: 0; bottom: 0;
@@ -48,10 +49,19 @@
     display:block;
     padding: 18px 14px 90px;
     background: linear-gradient( to bottom, rgba(16,35,61,.70), rgba(16,35,61,.80) ),
-                url('../img/bgindex.png') no-repeat center/cover;
+                url('/assets/img/Bg 1.png') no-repeat center/cover;
   }
   .hero-title{ font-size:1.5rem; margin-top:6px; }
   .hero-desc{  font-size:1rem; opacity:.95; }
+
+  .hero-logos{ display:none; }
+  .hero-countries {
+  font-size: 0.55rem;
+  color: #ffffff;
+  margin-bottom: 10px;
+  word-wrap: break-word; /* ถ้ายาวเกินให้ตัดเอง */
+}
+
   .signup-button{
     position: fixed;
     left: 14px; right: 14px; bottom: 14px;
@@ -62,14 +72,6 @@
     background: #e1cf91; color:#112947;
     box-shadow: 0 10px 24px rgba(0,0,0,.22);
     z-index: 1100;
-  }
-  .hero-countries {
-  display: none;
-}
-  .mobile-only {
-    display: inline-block;  /* หรือ block ตามต้องการ */
-    font-size: 1rem;
-    color: #ffffff;
   }
 
   .info-section{ margin-top: 14px; padding:16px; }
@@ -82,10 +84,3 @@
 .nav-toggle.active span:nth-child(2){ opacity:0; }
 .nav-toggle.active span:nth-child(3){ transform: translateY(-8px) rotate(-45deg); }
 .nav-toggle span{ transition: transform .18s ease, opacity .12s ease; }
-/* ซ่อนปกติ */
-.mobile-only { display: none !important; }
-
-/* ต้องเป็นจอแคบ + เป็นทัชเท่านั้น */
-@media (max-width: 900px) and (any-hover: none) and (pointer: coarse) {
-  .mobile-only { display: inline-block !important; }
-}
