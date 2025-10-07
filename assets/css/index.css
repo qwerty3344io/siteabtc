@@ -1645,11 +1645,7 @@ a:hover {
     will-change: transform; backface-visibility: hidden;
   }
 
-  /* ปุ่มสมัครอย่า absolute บนมือถือ */
-  .signup-button { position: static !important; display: inline-flex; margin-top: 8px; }
 
-  /* ประเทศยาว ๆ ให้ตัดบรรทัดได้ */
-  .hero-countries { white-space: normal !important; overflow-wrap: anywhere; }
 
   /* ลดตัวอักษรปุ่ม Login บนจอเล็ก */
   .login-btn { font-size: clamp(1rem, 3.2vw, 1.2rem); }
