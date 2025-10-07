@@ -672,21 +672,7 @@ text-decoration: none;
     5px 5px 10px rgba(66, 156, 252, 0.3),   
    -5px -5px 10px rgba(66,156,252,0.3); 
 }
-.zoom-img {
-  display:block;
-  width:100%;
-  height:auto;
-  border-radius:10px;
-  cursor: zoom-in;
-  transition: transform .15s ease;
-  transform-origin: center center; /* ซูมจากกึ่งกลาง */
-  touch-action: none;              /* กัน browser จับสไลด์เองบนมือถือ */
-}
 
-.zoom-img.active {
-  transform: scale(1.5);
-  cursor: zoom-out;
-}
 .abtc-section {
   display: flex;
   justify-content: space-between;
@@ -1059,4 +1045,5 @@ text-decoration: none;
   opacity: 1 !important;
   filter: none !important;
 }
+
 
