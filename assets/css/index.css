@@ -1759,3 +1759,46 @@ a:hover {
   .ft-center{ text-align:center !important; }
   .store-badges{ align-items:center !important; }
 }
+/* ===== Make hero full-bleed on mobile ===== */
+@media (max-width: 900px){
+  .main-hero{
+    /* เอา constraint ทิ้ง แล้วบังคับเต็มขอบจอ */
+    max-width: none !important;
+    width: 100vw !important;
+    margin: 0 calc(50% - 50vw) !important; /* trick ให้ชิดซ้ายขวา */
+    border-radius: 0 !important;
+    padding: 20px 16px 80px 16px !important; /* padding แบบมือถือ */
+    background: url('../img/Bg4.jpg') no-repeat center/cover !important;
+    background-color: #0f2b46 !important;
+  }
+
+  /* กันกล่องโลโก้มุมขวาไปดันความกว้าง */
+  .hero-logos{
+    margin-right: 0 !important;
+    margin-top: -35px !important;
+    padding: 16px !important;
+    border-radius: 0 0 0 24px !important;
+    background-color: rgba(255,255,255,.7) !important;
+  }
+
+  /* ปุ่มสมัครให้มาอยู่ใน flow */
+  .signup-button{
+    position: static !important;
+    display: inline-flex !important;
+    margin: 6px 0 0 0 !important;
+  }
+}
+
+/* กัน footer banner ให้เต็มจอเวลามือถือด้วย */
+@media (max-width: 900px){
+  .abtc-banner-overlay{
+    width: 100vw !important;
+    margin: 30px calc(50% - 50vw) 0 calc(50% - 50vw) !important;
+    height: 350px !important;
+    background-image: url('/IMG/Footerimg.png') !important;
+    background-size: cover !important;
+    background-repeat: no-repeat !important;
+    display: flex !important; align-items: center !important; justify-content: center !important; flex-direction: column !important;
+  }
+}
+
