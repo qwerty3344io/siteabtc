@@ -1,5 +1,5 @@
 .main-hero {
-  background: url('../img/bg1.png') no-repeat center/cover;
+  background: url('../img/bgindex.png') no-repeat center/cover;
   border-radius: 0px; /* ถ้าต้องการขอบมน */
   position: relative;
   display: flex;
