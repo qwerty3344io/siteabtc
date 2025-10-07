@@ -1621,3 +1621,67 @@ a:hover {
   opacity: 1 !important;
   filter: none !important;
 }
+/* ==== FIX: force mobile drawer on touch devices (even in Desktop Site mode) ==== */
+@media (hover: none) and (pointer: coarse) {
+  #navToggle { display: inline-flex !important; }
+  #navBackdrop { display: none !important; background: rgba(15,18,23,.45); }
+  #siteNav {
+    position: fixed !important;
+    top: 0; right: 0; bottom: 0;
+    width: min(86vw,340px);
+    display: flex; flex-direction: column;
+    padding: 14px;
+    background: #fff; border-left: 1px solid #eaeaea;
+    box-shadow: -18px 0 40px rgba(0,0,0,.18);
+    overflow-y: auto; z-index: 9001;
+    transform: translate3d(100%,0,0);
+    opacity: 0; visibility: hidden; pointer-events: none;
+    transition: transform .22s ease, opacity .22s ease, visibility 0s linear .22s;
+  }
+  #siteNav.is-open {
+    transform: translate3d(0,0,0);
+    opacity: 1; visibility: visible; pointer-events: auto;
+    transition: transform .22s ease, opacity .22s ease, visibility 0s;
+    will-change: transform; backface-visibility: hidden;
+  }
+
+  /* ปุ่มสมัครอย่า absolute บนมือถือ */
+  .signup-button { position: static !important; display: inline-flex; margin-top: 8px; }
+
+  /* ประเทศยาว ๆ ให้ตัดบรรทัดได้ */
+  .hero-countries { white-space: normal !important; overflow-wrap: anywhere; }
+
+  /* ลดตัวอักษรปุ่ม Login บนจอเล็ก */
+  .login-btn { font-size: clamp(1rem, 3.2vw, 1.2rem); }
+
+  /* รูปวิดีโอไม่เยื้องซ้ายในจอเล็ก */
+  .video-card { margin-left: 0 !important; }
+}
+
+/* ==== Desktop real devices (mouse/trackpad) → horizontal menu ==== */
+@media (hover: hover) and (pointer: fine) {
+  #navToggle { display: none !important; }
+  #navBackdrop { display: none !important; }
+  #siteNav {
+    position: static !important;
+    transform: none !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+    pointer-events: auto !important;
+    width: auto; height: auto;
+    display: flex; flex-direction: row; gap: 8px;
+    padding: 0; border: 0; box-shadow: none; background: transparent;
+    overflow: visible;
+  }
+  #siteNav a { background: transparent; margin: 0; padding: 8px 12px; font-weight: 600; }
+}
+
+/* ==== Small tweaks, safe everywhere ==== */
+/* โลโก้กลุ่มขวาบนอย่ากินพื้นที่บนจอเล็ก */
+@media (max-width: 600px){
+  .hero-logos { margin-top: 8px; padding: 8px; }
+}
+
+/* ปรับเมนูให้คมชัดเสมอ */
+#siteNav { background: #fff !important; filter: none !important; }
+
