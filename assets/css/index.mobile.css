@@ -49,7 +49,7 @@
     display:block;
     padding: 18px 14px 90px;
     background: linear-gradient( to bottom, rgba(16,35,61,.70), rgba(16,35,61,.80) ),
-                url('/../img/bgindex.png') no-repeat center/cover;
+                url('../img/bgindex.png') no-repeat center/cover;
   }
   .hero-title{ font-size:1.5rem; margin-top:6px; }
   .hero-desc{  font-size:1rem; opacity:.95; }
