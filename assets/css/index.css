@@ -1041,24 +1041,6 @@ a:hover {
   color: #162032;
   line-height: 1.7;
 }
-.info-checklist {
-  flex: 1.2;
-  display: flex;
-  flex-direction: column;
-  gap: 16px;
-  margin-top: 2px;
-}
-.check-item {
-  display: flex;
-  align-items: flex-start;
-  gap: 10px;
-  background: #f6f8fb;
-  border-radius: 9px;
-  padding: 10px 14px;
-  font-size: 1.01rem;
-  color: #1a5a1a;
-  box-shadow: 0 1px 5px #58ebc313;
-}
 .check-icon1, .check-icon2, .check-icon3, .check-icon4, .check-icon5 {
   width: 40px;
 }
