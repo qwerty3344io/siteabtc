@@ -398,7 +398,7 @@ a:hover {
   justify-content: center;
   background-repeat: no-repeat; 
   background-size: cover;            /* ขยายเต็มพื้นที่ */
-  background-image: url('/IMG/Footerimg.png');
+  background-image: url('../Footerimg.png');
 }
 
 .abtc-banner-overlay h2 {
@@ -1059,4 +1059,5 @@ text-decoration: none;
   opacity: 1 !important;
   filter: none !important;
 }
+
 
