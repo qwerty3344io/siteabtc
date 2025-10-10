@@ -1,6 +1,4 @@
 .main-hero {
-  background: url('../img/bgindex.png') no-repeat center/cover;
-  border-radius: 0px; /* ถ้าต้องการขอบมน */
   position: relative;
   display: flex;
   justify-content: space-between;
@@ -9,13 +7,17 @@
   margin: 0 auto;
   padding: 46px 24px 14px 24px;
   gap: 48px;
-  flex-wrap: wrap;
-  background-color: #0f2b46; /* หรือพื้นหลังที่คุณใช้ */
-  color: white;
+}
+.main-hero {
+  background: url('../img/bgindex.png') no-repeat center/cover;
+  border-radius: 0px; /* ถ้าต้องการขอบมน */
 }
 .hero-left {
   flex: 1.3;
   min-width: 350px;
+}
+.info-sec{
+  color: green;
 }
 .hero-title {
   font-size: 2.1rem;
@@ -42,6 +44,11 @@
   margin-bottom: 10px;
   word-wrap: break-word; /* ถ้ายาวเกินให้ตัดเอง */
   white-space: nowrap;     /* ไม่ตัดบรรทัด */
+}
+
+
+.main-hero {
+  position: relative; /* ทำให้ลูกหลานวาง absolute ได้ */
 }
 
 .hero-extra-btn {
@@ -103,13 +110,6 @@
   color: #162032;
   line-height: 1.7;
 }
-.info-checklist {
-  flex: 1.2;
-  display: flex;
-  flex-direction: column;
-  gap: 16px;
-  margin-top: 2px;
-}
 .check-item {
   display: flex;
   align-items: flex-start;
@@ -142,48 +142,6 @@
   margin-top: 3px;
 }
 
-.video-section {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: center;
-  gap: 40px;
-  max-width: 1080px;
-  margin: 38px auto 0 auto;
-  padding: 0 24px;
-  background: none;
-}
-.video-card {
-  width: 500px;
-  max-width: 1000px; /* หรือ 100% */
-  margin-left: -100px;
-
-}
-
-.video-wrapper {
-  position: relative;
-  padding-bottom: 56.25%; /* 16:9 aspect ratio */
-  height: 0;
-  overflow: hidden;
-}
-
-.video-wrapper iframe,
-.video-thumbnail {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-}
-
-.video-thumbnail img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  display: block;
-  cursor: pointer;
-  border-radius: 10px;
-}
 
 .play-button {
   position: absolute;
@@ -341,7 +299,16 @@
 @media (max-width: 440px) {
   .login-modal { width: 98vw; min-width: 0; padding: 18px 6vw 20px 6vw; }
 }
-
+.main-hero {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  padding: 35px;
+  background-color: #0f2b46; /* หรือพื้นหลังที่คุณใช้ */
+  color: white;
+  max-width: none;
+}
 
 .signup-button {
   position: absolute;
@@ -382,8 +349,10 @@
   background-size: cover; 
   background-repeat: no-repeat; 
   justify-content: center;
-  background-image: url('../img/Footerimg.png');  
+  background-image: url('../img/Footerimg.png');
+  
 }
+
 .abtc-banner-overlay h2 {
   color: #fff;
   font-size: 2rem;
@@ -965,6 +934,19 @@ a:hover {
   margin-left: auto;
 }
 .login-btn:hover { background: #274377; }
+
+.main-hero {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  max-width: 1080px;
+  margin: 0 auto;
+  padding: 46px 24px 14px 24px;
+  gap: 48px;
+  background: url('/assets/img/Bg 1.png') no-repeat center/cover;
+  color: #fff;
+}
 .hero-left { flex: 1.3; min-width: 350px; }
 .hero-title {
   font-size: 2.1rem;
@@ -1007,7 +989,12 @@ a:hover {
 }
 
 @media (max-width: 900px) {
-
+  .main-hero {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
+    padding: 20px 16px 80px 16px;
+  }
   .signup-button {
     position: static;
     display: inline-flex;
@@ -1041,41 +1028,76 @@ a:hover {
   color: #162032;
   line-height: 1.7;
 }
-.check-icon1, .check-icon2, .check-icon3, .check-icon4, .check-icon5 {
-  width: 40px;
+.info-checklist {
+  flex: 1.2;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-top: 2px;
 }
 
-.video-section {
+/* ===== Video block (responsive + centered + fill) ===== */
+.video-section{
+  display:flex;
+  justify-content:center;
+  padding:0 16px;
+}
+
+.video-card{
+  width:100%;
+  max-width: 800px;   /* ปรับได้ตามต้องการ */
+  margin:0 auto;
+}
+
+.video-wrapper{
+  position:relative;
+  width:100%;
+  aspect-ratio:16 / 9;  /* คุมอัตราส่วน */
+  background:#000;      /* สีพื้นหลังยามโหลด */
+  border-radius:12px;
+  overflow:hidden;
+}
+
+/* ปก & วิดีโอให้เติมเต็มกรอบเสมอ */
+.video-wrapper .video-thumbnail,
+.video-wrapper iframe{
+  position:absolute;
+  inset:0;           /* = top/right/bottom/left: 0 */
+  width:100%;
+  height:100%;
+}
+
+.video-wrapper .video-thumbnail img{
+  width:100%;
+  height:100%;
+  object-fit:cover;  /* ครอบเต็ม ไม่มีแถบดำ */
+  display:block;
+  border-radius:inherit;
+}
+
+/* ถ้าจะใส่ปุ่มเล่นทับบนปก ให้ใช้คลาสนี้ (ตัวเลือก) */
+.play-btn{
+  position:absolute;
+  top:50%; left:50%;
+  transform:translate(-50%, -50%);
+  width:80px; height:80px;
+  border-radius:50%;
+  background:rgba(0,0,0,.55);
+  display:grid; place-items:center;
+  pointer-events:none; /* คลิกทะลุไปที่ปกได้ */
+}
+
+.abtc-banner-overlay {
   display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: center;
-  gap: 40px;
-  max-width: 1080px;
-  margin: 38px auto 0 auto;
-  padding: 0 24px;
-  background: none;
-}
-.video-card { width: 500px; max-width: 1000px; margin-left: -100px; }
-.video-wrapper {
-  position: relative;
-  padding-bottom: 56.25%;
-  height: 0;
-  overflow: hidden;
-}
-.video-thumbnail img {
   width: 100%;
-  height: 100%;
-  object-fit: cover;
-  display: block;
-  cursor: pointer;
-  border-radius: 10px;
-}
-.video-caption {
-  margin-top: 1rem;
-  text-align: center;
-  font-weight: bold;
-}
+  height: 350px;
+  margin-top: 30px;
+  flex-direction: column;
+  align-items: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  justify-content: center;
+  background-image: url('/assets/img/Footerimg.png');
 }
 .abtc-banner-overlay h2 {
   color: #fff;
@@ -1262,7 +1284,6 @@ a:hover {
   margin-top: 18px; font-size: 0.97rem; color: #ffffff;
   border-radius: 7px; padding: 0;
 }
-.note-title { display: block; font-weight: bold; color: #5ee7df; margin-bottom: 3px; }
 #loginModal.active, #loginModalBackdrop.active { display: block; }
 @media (max-width: 440px) {
   .login-modal { width: 98vw; min-width: 0; padding: 18px 6vw 20px 6vw; }
@@ -1325,6 +1346,12 @@ a:hover {
 .nav-toggle span { transition: transform .18s ease, opacity .12s ease; }
 /* 900px */
 @media (max-width: 900px) {
+  .main-hero {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
+    padding: 20px 16px 80px 16px;
+  }
   .signup-button {
     position: static;
     display: inline-flex;
