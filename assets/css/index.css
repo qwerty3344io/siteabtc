@@ -116,6 +116,21 @@
   color: #1a5a1a;
   box-shadow: 0 1px 5px #58ebc313;
 }
+.info-profile{
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  background: #f3f4f5;
+  border-radius: 9px;
+  padding: 10px 14px;
+  font-size: 1.2rem;
+  color: #061b53;
+  box-shadow: 0 1px 5px #00000013;
+}
+.profile{
+  width: 35px;
+  margin-top: -5px;
+}
 .check-icon1 {
   width: 40px;
   margin-top: 40px;
