@@ -11,30 +11,31 @@
   <link rel="stylesheet" href="assets/css/abtc-nav-clickfix.css">
 </head>
 <body>
-  <!-- Header -->
   <header class="header">
   <div class="header-container">
     <a href="./" class="logo-link" aria-label="หน้าแรก ABTC">
       <img src="assets/img/logoapec.png" alt="APEC Logo" class="logo">
     </a>
-    <!-- ปุ่ม Hamburger -->
+    <!--Hamburger -->
     <button class="nav-toggle" id="navToggle" aria-label="สลับเมนู" aria-expanded="false" aria-controls="siteNav">
       <span></span><span></span><span></span>
     </button>
-   <!-- เมนูนำทาง -->
     <nav class="nav" id="siteNav" aria-label="หลัก">
       <a href="abtc-register.html">สมัครบัตร ABTC ปกติ</a>
       <a href="premium-service.html">Premium Service</a>
       <a href="thai-overseas.html">คนไทยในต่างประเทศ</a>
       <a href="https://abtc-jsccib.org/about-us.html" target="_blank" rel="noopener">ตรวจสอบสถานะการอนุมัติบัตร</a>
     </nav>
- <button class="login-btn" id="openLoginModal" type="button">เข้าสู่ระบบ</button>
+ <div class="login-wrapper">
+  <button class="login-btn" id="openLoginModal" type="button">
+  <img src="assets/img/user.png" alt="Login" class="login-icon">
+  &nbsp;เข้าสู่ระบบ
+  </button>
+</div>
   </div>
   </div>
 </header>
   <div class="nav-backdrop" id="navBackdrop" hidden></div>
-
-  <!-- Main Section -->
   <section class="main-hero">
   <div class="hero-left">
     <div class="hero-title">
@@ -50,7 +51,6 @@
   Peru • Philippines • Singapore • Viet Nam • Thailand
   </span>
 </div>   
-    <!-- รายละเอียดเพิ่มเติม -->
     <a href="https://abtc-jsccib.org/%E0%B8%84%E0%B8%B9%E0%B9%88%E0%B8%A1%E0%B8%B7%E0%B8%AD%20%E0%B8%81%E0%B8%B2%E0%B8%A3%E0%B9%83%E0%B8%8A%E0%B9%89%20Virtual%20ABTC.pdf" class="more-button" target="_blank" rel="noopener noreferrer"> 
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon">
         <path d="M12 20h9" />
@@ -117,9 +117,9 @@
  <div class="video-caption">ABTC Card Registration</div>
       </div>
       <div class="info-checklist">
-        <div class="info-profile">
+      <div class="info-profile">
           <img src="assets/img/profile.png" alt="check" class="profile">
-          <span><b>คุณสมบัติผู้สมัคร บัตร ABTC</b></span> <img src="assets/img/double-down.png" alt="check" class="double-down">
+          <span><b>คุณสมบัติผู้สมัคร บัตร ABTC</b></span><img src="assets/img/double-down.png" alt="check" class="double-down">
         </div>
         <div class="check-item">
           <img src="assets/img/Frame 1.png" alt="check" class="check-icon1">
@@ -151,12 +151,9 @@
     <button class="abtc-btn">สอบถามสิทธิพิเศษ ABTC</button>
     </a>
   </div>
-
-  <!-- Stats & Contact -->
    <footer class="abtc-footer">
   <div class="footer-inner">
     <div class="footer-grid">
-      <!-- คอลัมน์ซ้าย : สถิติ -->
       <section class="ft-col">
         <h3 class="ft-title">สถิติการเข้าชม</h3>
         <ul class="ft-list">
@@ -168,8 +165,6 @@
           <li>เริ่มนับ 10 ตุลาคม 2561</li>
         </ul>
       </section>
-
-      <!-- คอลัมน์กลาง : ช่องทางติดตาม -->
       <section class="ft-col ft-center">
         <h3 class="ft-title">ติดตามข่าวสารได้ที่</h3>
         <div class="ft-brand">
@@ -189,8 +184,6 @@
           </div>
         </div>
       </section>
-
-      <!-- คอลัมน์ขวา : ที่ตั้ง + แอป -->
       <section class="ft-col ft-right">
         <h3 class="ft-title">สถานที่รับบัตร</h3>
         <address class="ft-address">
@@ -215,6 +208,7 @@
   </div>
 </footer>
   </section>
+    <!--login-->
   <div class="modal-backdrop" id="loginModalBackdrop"></div>
 <div class="login-modal" id="loginModal">
   <button class="close-btn" id="closeLoginModal">&times;</button>
