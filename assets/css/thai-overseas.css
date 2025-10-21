@@ -23,7 +23,7 @@ a:hover {
   display: flex;
   align-items: center;
   justify-content: flex-start;
-  max-width: 1080px;
+  max-width: 100%;
   margin: 0 auto;
   padding: 10px 24px 8px 24px;
   gap: 24px;
@@ -65,39 +65,49 @@ a:hover {
 .nav a:hover {
   background: #e6f1ff;
 }
+.login-icon{
+width: 22px;
+height: 22px;
+flex-shrink: 0;
+}
 .login-btn {
-   background: #162032;
-  color: #fff;
+  background: transparent;
+  color: #162032;
   font-family: 'Prompt', sans-serif;
-  font-weight: 700;
-  font-size: 2.1rem;
+  font-weight: 100;
+  font-size: 1.1rem;
   border: none;
-  border-radius: 10px;
+  border-radius: 80px;
   padding: 8px 32px;
   letter-spacing: .2px;
   cursor: pointer;
   transition: background .15s;
-  box-shadow: 0 2px 8px #0002;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-rendering: geometricPrecision;
-  white-space: nowrap;     
-  line-height: 1;          
-  display: inline-flex;     
+  line-height: 1;
+  display: inline-flex;
   align-items: center;
-  min-width: max-content;   
-  flex: 0 0 auto;   
+  min-width: max-content;
+  flex: 0 0 auto;
+  margin-left: auto;
 }
-.login-btn:hover {
-  background: #274377;
+.login-wrapper {
+  display: flex;
+  align-items: center; /* ✅ ให้ทุกอย่างอยู่กลางแนวดิ่ง */
+  gap: 8px;
+  background: transparent;
+}
+.login-btn:hover { background: #e0e0e0; }
+.user-icon{
+ width: 22px;
+height: 22px;
+flex-shrink: 0;
 }
 
 .main-hero {
-  background: url('../img/Bg3.jpg') no-repeat center/cover;
+  background: url('/assets/img/Bg3.jpg') no-repeat center/cover;
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
-  max-width: 1080px;
+  max-width: 100%;
   margin: 0 auto;
   padding: 46px 24px 14px 24px;
   gap: 48px;
@@ -995,5 +1005,105 @@ text-decoration: none;
   background: #ffffff !important;
   opacity: 1 !important;
   filter: none !important;
-
 }
+/* Desktop overrides */
+@media (min-width: 901px){
+  #navToggle{ display: none; }
+  #navBackdrop{ display: none !important; }
+  #siteNav{
+    position: static;
+    transform: none; opacity: 1; visibility: visible; pointer-events: auto;
+    width: auto; height: auto;
+    display: flex; flex-direction: row; gap: 8px; padding: 0;
+    border: 0; box-shadow: none; background: transparent; overflow: visible;
+  }
+  #siteNav a{ background: transparent; margin: 0; padding: 8px 12px; font-weight: 600; }
+}
+
+/* Active link highlight (optional) */
+#siteNav a[aria-current="page"]{ background:#eaf0ff; outline:2px solid #c9dbff; }
+
+/* Crisp Hamburger (span) */
+#navToggle{
+  display:inline-grid; place-items:center;
+  width:40px; height:40px; padding:0; border:0; background:transparent; cursor:pointer;
+  -webkit-tap-highlight-color: transparent;
+}
+#navToggle span{
+  display:block;
+  width:24px;               /* กว้างเท่ากัน */
+  height:3px;               /* หนาขึ้น (3px) -> คมบนจอส่วนใหญ่ */
+  margin:5px 0;             /* ระยะห่างคู่กับ 3px จะลงล็อกพิกเซล */
+  background:#0f223d;
+  border-radius:2px;
+  transform: translateZ(0);  /* กันฟุ้งตอนแอนิเมชัน */
+  transition: transform .18s ease, opacity .12s ease;
+}
+/* X animation */
+#navToggle.active span:nth-child(1){ transform: translateY(8px) rotate(45deg); }
+#navToggle.active span:nth-child(2){ opacity:0; }
+#navToggle.active span:nth-child(3){ transform: translateY(-8px) rotate(-45deg); }
+
+/* Crisp Hamburger (SVG) */
+.nav-toggle{ display:inline-grid; place-items:center; width:40px; height:40px; background:transparent; border:0; cursor:pointer; }
+.burger{ width:24px; height:24px; stroke:#0f223d; stroke-width:2.5; stroke-linecap:round; fill:none; }
+.burger .line{ transition: transform .18s ease, opacity .12s ease; transform-origin:12px 12px; }
+.nav-toggle.active .line2{ opacity:0; }
+.nav-toggle.active .line1{ transform: translateY(5px) rotate(45deg); }
+.nav-toggle.active .line3{ transform: translateY(-5px) rotate(-45deg); }
+
+/* ===== Header layout: Grid ซ้าย-กลาง-ขวา ===== */
+.header { background:#fff; border-bottom:1px solid #e3e8ef; position:sticky; top:0; z-index:1000; }
+.header-container{
+  max-width: 1200px;            /* ปรับได้ตามดีไซน์ */
+  margin: 0 auto;
+  padding: 10px 24px 8px;
+  display: grid;
+  grid-template-columns: auto 1fr auto;  /* โลโก้ | เมนู(กึ่งกลาง) | ปุ่มขวา */
+  align-items: center;
+  gap: 16px;
+}
+
+/* โลโก้คงเดิม */
+.logo{ height:80px; }
+
+/* ===== Mobile-first: เมนูเป็น drawer ===== */
+#siteNav{
+  position: fixed; inset: 0 0 0 auto; width: min(86vw,340px);
+  display: none; flex-direction: column; padding:14px;
+  background:#fff; border-left:1px solid #eaeaea; box-shadow:-18px 0 40px rgba(0,0,0,.18);
+  transform: translateX(100%); opacity:0; visibility:hidden; pointer-events:none;
+  transition: transform .22s ease, opacity .22s ease, visibility 0s linear .22s;
+}
+#siteNav.is-open{ display:flex; transform:none; opacity:1; visibility:visible; pointer-events:auto; transition: transform .22s, opacity .22s; }
+#siteNav a{ font-size:1.06rem; font-weight:700; color:#162032; padding:14px 12px; margin-bottom:10px; border-radius:12px; background:#f6f8fb; text-decoration:none; }
+#siteNav a:hover{ background:#eaf0ff; }
+
+#navToggle{ display:inline-flex; align-items:center; justify-content:center; width:40px; height:40px; border:0; background:transparent; cursor:pointer; }
+#navToggle span{ width:22px; height:2px; background:#0f223d; display:block; margin:4px 0; transition:transform .18s, opacity .12s; }
+#navToggle.active span:nth-child(1){ transform: translateY(8px) rotate(45deg); }
+#navToggle.active span:nth-child(2){ opacity:0; }
+#navToggle.active span:nth-child(3){ transform: translateY(-8px) rotate(-45deg); }
+
+#navBackdrop{ position:fixed; inset:0; background:rgba(15,18,23,.45); z-index:9000; }
+#navBackdrop[hidden]{ display:none; }
+
+/* ===== Desktop overrides (>=901px): เมนูอยู่ "กลางจริง" ===== */
+@media (min-width:901px){
+  #navToggle{ display:none; }
+  #navBackdrop{ display:none !important; }
+
+  /* ล้างโหมด drawer */
+  #siteNav{
+    position: static; transform:none; opacity:1; visibility:visible; pointer-events:auto;
+    display:flex; flex-direction:row; gap:12px; width:auto; height:auto;
+    padding:0; border:0; box-shadow:none; background:transparent; overflow:visible;
+    justify-self: center;                 /* << กึ่งกลางคอลัมน์กลาง */
+  }
+  #siteNav a{ background:transparent; margin:0; padding:8px 12px; font-weight:600; color:#162032; }
+
+  .login-wrapper{ justify-self: end; }    /* ปุ่มกลุ่มขวา */
+}
+
+/* ไฮไลต์ลิงก์หน้าเดียวกัน */
+#siteNav a[aria-current="page"]{ background:#eaf0ff; outline:2px solid #c9dbff; border-radius:8px; }
