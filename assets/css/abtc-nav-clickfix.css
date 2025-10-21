@@ -122,5 +122,91 @@
     height: 50px; /* ย่อโลโก้ลงสำหรับมือถือ */
     width: auto;
   }
+/* === ABTC Mobile Drawer: Click-through & Layer Fix === */
+#siteNav{ z-index:100003 !important; pointer-events:auto !important; background:#fff !important; filter:none !important; opacity:1 !important; will-change:transform; transform:translate3d(0,0,0); -webkit-overflow-scrolling:touch; }
+#siteNav *{ pointer-events:auto !important; position:relative; z-index:1; }
+#navBackdrop{ z-index:100001 !important; background:transparent !important; backdrop-filter:none !important; -webkit-backdrop-filter:none !important; }
+#navBackdrop[hidden]{ display:none !important; pointer-events:none !important; }
+
+/* ล็อกคลิกหลังเมนูเมื่อเปิด */
+.no-scroll .signup-button,
+.no-scroll .abtc-banner-overlay,
+.no-scroll .main-hero,
+.no-scroll header,
+.no-scroll .header{ pointer-events:none !important; }
+.no-scroll #siteNav, .no-scroll #siteNav *{ pointer-events:auto !important; }
+
+/* ===== Mobile: วาง hamburger ชิดปุ่ม Login (ขวาสุด) ===== */
+@media (max-width: 900px){
+  .header .header-container{
+    display:flex;
+    align-items:center;
+    gap:12px;
+    min-height:72px;
+  }
+
+  /* ซ้าย→ขวา: โลโก้ (1) → เมนู (2/เป็น drawer) → Login (3) → Hamburger (4) */
+  .header .logo-link{ order:1; }
+  #siteNav{ order:2; }               /* ลำดับไม่สำคัญ เพราะเป็น drawer */
+  .header .login-wrapper{            /* << เดิมใส่ผิดที่ .login-btn */
+    order:3;
+    margin-left:auto;
+  }
+  #navToggle{
+    order:4;
+    display:inline-grid;
+    margin-left:8px;
+  }
+
+  /* ปรับโลโก้พาร์ทขวาใน hero บนจอเล็ก */
+  .hero-logos{
+    display:flex;
+    gap:0;
+    margin-top:10px;
+    margin-right:0;
+    padding:20px;
+    border-radius:10px;
+    background-color:rgba(255,255,255,.7);
+  }
+  .video-thumbnail img{
+    width:80%;
+    height:80%;
+    margin-left:auto;
+    margin-right:0;
+    display:block;
+    cursor:pointer;
+    border-radius:10px;
+  }
+}
+
+/* ===== Desktop: ซ่อน hamburger ===== */
+@media (min-width: 901px){
+  #navToggle{ display:none !important; }
+}
+
+/* ทำให้ลิงก์ใน drawer คลิกได้เต็มแถบ */
+#siteNav a{
+  display:flex;
+  align-items:center;
+  line-height:1.4;
+  padding:14px 14px;
+  position:relative;
+  z-index:2;
+  -webkit-tap-highlight-color:transparent;
+  touch-action:manipulation;
+}
+#siteNav a, #siteNav a *{ pointer-events:auto !important; }
+
+/* ===== Mobile: hero-right (บล็อกนี้เคยลืมเครื่องหมาย { ) ===== */
+@media (max-width: 900px){
+  .hero-right{ display:block; margin-top:16px; }
+  .hero-right .hero-logos{
+    display:flex;
+    justify-content:center;
+    flex-wrap:wrap;
+    gap:12px;
+  }
+  .hero-right .hero-logos img{ height:50px; width:auto; }
+}
 
 
