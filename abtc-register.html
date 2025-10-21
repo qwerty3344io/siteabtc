@@ -12,39 +12,40 @@
 
 </head>
 <body>
-  <!-- Header -->
-  <header class="header">
+ <header class="header">
   <div class="header-container">
     <a href="./" class="logo-link" aria-label="หน้าแรก ABTC">
       <img src="assets/img/logoapec.png" alt="APEC Logo" class="logo">
     </a>
-    <!-- ปุ่ม Hamburger -->
+    <!--Hamburger -->
     <button class="nav-toggle" id="navToggle" aria-label="สลับเมนู" aria-expanded="false" aria-controls="siteNav">
       <span></span><span></span><span></span>
     </button>
-   <!-- เมนูนำทาง -->
     <nav class="nav" id="siteNav" aria-label="หลัก">
       <a href="abtc-register.html">สมัครบัตร ABTC ปกติ</a>
       <a href="premium-service.html">Premium Service</a>
       <a href="thai-overseas.html">คนไทยในต่างประเทศ</a>
       <a href="https://abtc-jsccib.org/about-us.html" target="_blank" rel="noopener">ตรวจสอบสถานะการอนุมัติบัตร</a>
     </nav>
- <button class="login-btn" id="openLoginModal" type="button">เข้าสู่ระบบ</button>
+<div class="login-wrapper">
+  <button class="login-btn" id="openLoginModal" type="button">
+  <img src="assets/img/user.png" alt="Login" class="login-icon">
+  &nbsp;เข้าสู่ระบบ
+  </button>
+</div>
   </div>
   </div>
 </header>
   <div class="nav-backdrop" id="navBackdrop" hidden></div>
-
-  <!-- Main Section -->
   <section class="main-hero">
     <div class="hero-left">
       <div class="hero-title">
-        สมัครบัตร <span class="highlight-green">ABTC</span> ปกติ
+        สมัครบัตร <span class="highlight-green">ABTC</span><br> ปกติ
       </div>
       <div class="hero-desc">
        • <a href="https://abtc-jsccib.org/about-us.html" target="_blank" rel="noopener">สิทธิประโยชน์</a>
-       • <a href="https://abtc-jsccib.org/about-us.html" target="_blank" rel="noopener">เอกสารประกอบการสมัครบัตร  ABTC</a>
-       • <a href="https://abtc-jsccib.org/about-us.html" target="_blank" rel="noopener">ขั้นตอนการสมัครบัตร  ABTC</a>
+       • <a href="https://abtc-jsccib.org/%E0%B9%80%E0%B8%AD%E0%B8%81%E0%B8%AA%E0%B8%B2%E0%B8%A3%E0%B8%9B%E0%B8%A3%E0%B8%B0%E0%B8%81%E0%B8%AD%E0%B8%9A%E0%B8%81%E0%B8%B2%E0%B8%A3%E0%B8%AA%E0%B8%A1%E0%B8%B1%E0%B8%84%E0%B8%A3%E0%B8%9A%E0%B8%B1%E0%B8%95%E0%B8%A3-ABTC.pdf" target="_blank" rel="noopener">เอกสารประกอบการสมัครบัตร  ABTC</a>
+       • <a href="https://abtc-jsccib.org/%E0%B8%82%E0%B8%B1%E0%B9%89%E0%B8%99%E0%B8%95%E0%B8%AD%E0%B8%99%E0%B8%81%E0%B8%B2%E0%B8%A3%E0%B8%AA%E0%B8%A1%E0%B8%B1%E0%B8%84%E0%B8%A3%E0%B8%9A%E0%B8%B1%E0%B8%95%E0%B8%A3%20ABTC%20(Final).pdf" target="_blank" rel="noopener">ขั้นตอนการสมัครบัตร  ABTC</a>
       </div>
     </div>
     <div class="hero-right">
@@ -109,11 +110,9 @@
  </div>
   </div>
 </section>
-  <!-- Stats & Contact -->
    <footer class="abtc-footer">
   <div class="footer-inner">
     <div class="footer-grid">
-      <!-- คอลัมน์ซ้าย : สถิติ -->
       <section class="ft-col">
         <h3 class="ft-title">สถิติการเข้าชม</h3>
         <ul class="ft-list">
@@ -125,8 +124,6 @@
           <li>เริ่มนับ 10 ตุลาคม 2561</li>
         </ul>
       </section>
-
-      <!-- คอลัมน์กลาง : ช่องทางติดตาม -->
       <section class="ft-col ft-center">
         <h3 class="ft-title">ติดตามข่าวสารได้ที่</h3>
         <div class="ft-brand">
@@ -146,8 +143,6 @@
           </div>
         </div>
       </section>
-
-      <!-- คอลัมน์ขวา : ที่ตั้ง + แอป -->
       <section class="ft-col ft-right">
         <h3 class="ft-title">สถานที่รับบัตร</h3>
         <address class="ft-address">
@@ -173,14 +168,18 @@
   </div>
 </footer>
   </section>
+    <!--login-->
   <div class="modal-backdrop" id="loginModalBackdrop"></div>
 <div class="login-modal" id="loginModal">
   <button class="close-btn" id="closeLoginModal">&times;</button>
   <div class="login-modal-title">เข้าสู่ระบบ</div>
   <form class="login-form" autocomplete="off">
-    <input type="text" class="login-input" placeholder="" aria-label="Username">
-    <input type="password" class="login-input" placeholder="" aria-label="Password">
-    <button type="submit" class="login-submit-btn">เข้าสู่ระบบ</button>
+    <input type="text" class="login-input" placeholder="อีเมลผู้ใช้งาน"aria-label="Username">
+    <input type="password" class="login-input" placeholder="รหัสผ่าน" aria-label="Password">
+   <button type="button" class="login-submit-btn"
+        onclick="location.assign('https://abtc-jsccib.org/login-page.html')">
+  เข้าสู่ระบบ
+</button>
   </form>
   <div class="login-modal-links">
     <a href="https://abtc-jsccib.org/forgot-password.html" class="login-link">ลืมรหัสผ่าน</a>
