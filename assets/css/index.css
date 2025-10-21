@@ -4,13 +4,13 @@
   position: relative;
   display: flex;
   justify-content: space-between;
-    flex-wrap: wrap;
+  flex-wrap: wrap;
   align-items: flex-start;
-  max-width: 1080px;
+  max-width: 100%;
   margin: 0 auto;
   padding: 46px 24px 14px 24px;
   gap: 48px;
-   background-color: #0f2b46; /* หรือพื้นหลังที่คุณใช้ */
+  background-color: #0f2b46; /* หรือพื้นหลังที่คุณใช้ */
   color: white;
 }
 .hero-left {
@@ -73,16 +73,6 @@
   border-radius: 15px;
   box-shadow: 0 2px 22px #00336620;
 }
-
-
-.info-section {
-  background: #fff;
-  border-radius: 18px;
-  box-shadow: 0 2px 18px #930e0510;
-  max-width: 1080px;
-  margin: 32px auto 0 auto;
-  padding: 22px 28px 18px 28px;
-}
 .info-title {
   display: flex;
   align-items: center;
@@ -119,7 +109,7 @@
 .info-profile{
   display: flex;
   align-items: flex-start;
-  gap: 10px;
+  gap: 20px;
   background: #f3f4f5;
   border-radius: 9px;
   padding: 10px 14px;
@@ -131,7 +121,19 @@
   width: 35px;
   margin-top: -5px;
 }
-
+.double-down{
+  width: 20px;
+  margin-top: 5px;
+}
+.login-icon{
+width: 22px;
+height: 22px;
+flex-shrink: 0;
+}
+.icon{
+  width: 20px;
+  margin-top: 5px;
+}
 .check-icon1 {
   width: 40px;
   margin-top: 40px;
@@ -152,8 +154,6 @@
   width: 40px;
   margin-top: 3px;
 }
-
-
 .play-button {
   position: absolute;
   top: 50%;
@@ -349,9 +349,11 @@
   flex-direction: column;
   align-items: center;
   background-size: cover; 
-  background-repeat: no-repeat; 
+  background-repeat: no-repeat;
+  max-width: 100%; 
   justify-content: center;
   background-image: url('../img/Footerimg.png');
+  
 }
 
 .abtc-banner-overlay h2 {
@@ -802,7 +804,7 @@ a:hover {
   display: flex;
   align-items: center;
   justify-content: flex-start;
-  max-width: 1080px;
+  max-width: 100%;
   margin: 0 auto;
   padding: 10px 24px 8px 24px;
   gap: 24px;
@@ -841,22 +843,10 @@ a:hover {
 }
 
 .nav {
-  position: fixed;
-  top: 0; right: 0; bottom: 0;
-  width: min(86vw, 340px);
-  z-index: 10001;
   display: flex;
-  flex-direction: column;
-  padding: 14px;
-  background: #fff;
-  border-left: 1px solid #eaeaea;
-  box-shadow: -18px 0 40px rgba(0,0,0,.18);
-  overflow-y: auto;
-  transform: translate3d(100%,0,0);
-  opacity: 0;
-  visibility: hidden;
-  pointer-events: none;
-  transition: transform .22s ease, opacity .22s ease, visibility 0s linear .22s;
+  gap: 24px;
+  margin-left: auto;
+  margin-right: 18px;
 }
 .nav.is-open {
   transform: translate3d(0,0,0);
@@ -867,13 +857,12 @@ a:hover {
   backface-visibility: hidden;
 }
 .nav a {
-  font-size: 1.06rem;
-  font-weight: 700;
+  font-size: 1rem;
   color: #162032;
-  padding: 14px 12px;
-  margin-bottom: 10px;
-  border-radius: 12px;
-  background: #f6f8fb;
+  font-weight: 500;
+  padding: 2px 6px;
+  border-radius: 4px;
+  transition: background 0.15s;
   text-decoration: none;
 }
 .nav a:hover { background: #eaf0ff; }
@@ -897,10 +886,13 @@ a:hover {
     overflow: visible;
   }
   .nav a {
-    background: transparent;
-    margin: 0;
-    padding: 8px 12px;
-    font-weight: 600;
+   font-size: 1rem;
+  color: #162032;
+  font-weight: 500;
+  padding: 2px 6px;
+  border-radius: 4px;
+  transition: background 0.15s;
+  text-decoration: none;
   }
 }
 
@@ -915,18 +907,17 @@ a:hover {
 .nav-backdrop[hidden] { display: none; }
 
 .login-btn {
-  background: #162032;
-  color: #fff;
+  background: transparent;
+  color: #162032;
   font-family: 'Prompt', sans-serif;
-  font-weight: 700;
-  font-size: 2.1rem;
+  font-weight: 100;
+  font-size: 1.1rem;
   border: none;
-  border-radius: 10px;
+  border-radius: 80px;
   padding: 8px 32px;
   letter-spacing: .2px;
   cursor: pointer;
   transition: background .15s;
-  box-shadow: 0 2px 8px #0002;
   line-height: 1;
   display: inline-flex;
   align-items: center;
@@ -934,16 +925,13 @@ a:hover {
   flex: 0 0 auto;
   margin-left: auto;
 }
-.login-btn:hover { background: #274377; }
-.hero-left { flex: 1.3; min-width: 350px; }
-.hero-title {
-  font-size: 2.1rem;
-  font-weight: bold;
-  margin-bottom: 18px;
-  margin-top: 12px;
-  color: #fff;
-  line-height: 1.2;
+.login-wrapper {
+  display: flex;
+  align-items: center; /* ✅ ให้ทุกอย่างอยู่กลางแนวดิ่ง */
+  gap: 8px;
+  background: transparent;
 }
+.login-btn:hover { background: #e0e0e0; }
 .highlight-green { color: #3cb371; }
 .hero-desc { font-size: 1.06rem; margin-bottom: 14px; color: #fff; }
 .hero-desc .link { color: #18b03c; }
@@ -1024,7 +1012,10 @@ a:hover {
   gap: 16px;
   margin-top: 2px;
 }
-
+.info-checklist .feature{
+  color: red;
+ 
+}
 /* ===== Video block (responsive + centered + fill) ===== */
 .video-section{
   display:flex;
@@ -1075,6 +1066,7 @@ a:hover {
   display:grid; place-items:center;
   pointer-events:none; /* คลิกทะลุไปที่ปกได้ */
 }
+
 .abtc-banner-overlay h2 {
   color: #fff;
   font-size: 2rem;
@@ -1521,6 +1513,28 @@ a:hover {
 .no-scroll{ overflow: hidden; height: 100vh; }
 
 /* Desktop overrides */
+@media (min-width:901px){
+  .header-container{
+    display: grid;
+    grid-template-columns: auto 1fr auto;  /* โลโก้ | กลางยืด | ปุ่ม */
+    align-items: center;
+    column-gap: 24px;
+  }
+
+  .logo-link{ grid-column: 1; }
+
+  .nav{
+    grid-column: 2;
+    justify-self: center;    /* จัดเมนูให้อยู่กึ่งกลาง */
+    width: max-content;      /* ให้กว้างเท่าที่เมนูใช้ ไม่ยืดเต็มแถว */
+  }
+
+  .login-btn{
+    grid-column: 3;
+    justify-self: end;
+    margin-left: 0;          /* ยกเลิก auto-margin เดิม */
+  }
+}
 @media (min-width: 901px){
   #navToggle{ display: none; }
   #navBackdrop{ display: none !important; }
@@ -1587,3 +1601,60 @@ a:hover {
   opacity: 1 !important;
   filter: none !important;
 }
+/* ===== Header layout: Grid ซ้าย-กลาง-ขวา ===== */
+.header { background:#fff; border-bottom:1px solid #e3e8ef; position:sticky; top:0; z-index:1000; }
+.header-container{
+  max-width: 1200px;            /* ปรับได้ตามดีไซน์ */
+  margin: 0 auto;
+  padding: 10px 24px 8px;
+  display: grid;
+  grid-template-columns: auto 1fr auto;  /* โลโก้ | เมนู(กึ่งกลาง) | ปุ่มขวา */
+  align-items: center;
+  gap: 16px;
+}
+
+/* โลโก้คงเดิม */
+.logo{ height:80px; }
+
+/* ===== Mobile-first: เมนูเป็น drawer ===== */
+#siteNav{
+  position: fixed; inset: 0 0 0 auto; width: min(86vw,340px);
+  display: none; flex-direction: column; padding:14px;
+  background:#fff; border-left:1px solid #eaeaea; box-shadow:-18px 0 40px rgba(0,0,0,.18);
+  transform: translateX(100%); opacity:0; visibility:hidden; pointer-events:none;
+  transition: transform .22s ease, opacity .22s ease, visibility 0s linear .22s;
+}
+#siteNav.is-open{ display:flex; transform:none; opacity:1; visibility:visible; pointer-events:auto; transition: transform .22s, opacity .22s; }
+#siteNav a{ font-size:1.06rem; font-weight:700; color:#162032; padding:14px 12px; margin-bottom:10px; border-radius:12px; background:#f6f8fb; text-decoration:none; }
+#siteNav a:hover{ background:#eaf0ff; }
+
+#navToggle{ display:inline-flex; align-items:center; justify-content:center; width:40px; height:40px; border:0; background:transparent; cursor:pointer; }
+#navToggle span{ width:22px; height:2px; background:#0f223d; display:block; margin:4px 0; transition:transform .18s, opacity .12s; }
+#navToggle.active span:nth-child(1){ transform: translateY(8px) rotate(45deg); }
+#navToggle.active span:nth-child(2){ opacity:0; }
+#navToggle.active span:nth-child(3){ transform: translateY(-8px) rotate(-45deg); }
+
+#navBackdrop{ position:fixed; inset:0; background:rgba(15,18,23,.45); z-index:9000; }
+#navBackdrop[hidden]{ display:none; }
+
+/* ===== Desktop overrides (>=901px): เมนูอยู่ "กลางจริง" ===== */
+@media (min-width:901px){
+  #navToggle{ display:none; }
+  #navBackdrop{ display:none !important; }
+
+  /* ล้างโหมด drawer */
+  #siteNav{
+    position: static; transform:none; opacity:1; visibility:visible; pointer-events:auto;
+    display:flex; flex-direction:row; gap:12px; width:auto; height:auto;
+    padding:0; border:0; box-shadow:none; background:transparent; overflow:visible;
+    justify-self: center;                 /* << กึ่งกลางคอลัมน์กลาง */
+  }
+  #siteNav a{ background:transparent; margin:0; padding:8px 12px; font-weight:600; color:#162032; }
+
+  .login-wrapper{ justify-self: end; }    /* ปุ่มกลุ่มขวา */
+}
+
+/* ไฮไลต์ลิงก์หน้าเดียวกัน */
+#siteNav a[aria-current="page"]{ background:#eaf0ff; outline:2px solid #c9dbff; border-radius:8px; }
+
+
