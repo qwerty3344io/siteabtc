@@ -1,5 +1,5 @@
 
-body {
+    body {
   font-family: 'Prompt', sans-serif;
   background: #f6f8fb;
   margin: 0;
@@ -18,12 +18,15 @@ a:hover {
   background: #fff;
   border-bottom: 1px solid #e3e8ef;
   padding: 0;
+  position: sticky;
+  top: 0;
+  z-index:
 }
 .header-container {
   display: flex;
   align-items: center;
   justify-content: flex-start;
-  max-width: 1080px;
+  max-width: 100%;
   margin: 0 auto;
   padding: 10px 24px 8px 24px;
   gap: 24px;
@@ -66,40 +69,42 @@ a:hover {
   background: #e6f1ff;
 }
 .login-btn {
-  background: #162032;
-  color: #fff;
+  background: transparent;
+  color: #162032;
   font-family: 'Prompt', sans-serif;
-  font-weight: 700;
-  font-size: 2.1rem;
+  font-weight: 100;
+  font-size: 1.1rem;
   border: none;
-  border-radius: 10px;
+  border-radius: 80px;
   padding: 8px 32px;
   letter-spacing: .2px;
   cursor: pointer;
   transition: background .15s;
-  box-shadow: 0 2px 8px #0002;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-rendering: geometricPrecision;
-
-  /* กันข้อความขึ้นสองบรรทัด */
-  white-space: nowrap;      /* ไม่ให้ตัดบรรทัด */
-  line-height: 1;           /* ลดความสูงบรรทัด กันขึ้นบรรทัดใหม่ */
-  display: inline-flex;     /* ให้ขยายตามเนื้อหา */
+  line-height: 1;
+  display: inline-flex;
   align-items: center;
-  min-width: max-content;   /* ป้องกันโดนบีบจนต้องตัดบรรทัด */
-  flex: 0 0 auto;           /* ไม่ให้หดใน flex container (เช่น .nav) */
+  min-width: max-content;
+  flex: 0 0 auto;
+  margin-left: auto;
 }
-.login-btn:hover {
-  background: #274377;
+.login-wrapper {
+  display: flex;
+  align-items: center; /* ✅ ให้ทุกอย่างอยู่กลางแนวดิ่ง */
+  gap: 8px;
+  background: transparent;
 }
-
+.login-btn:hover { background: #e0e0e0; }
+.login-icon{
+width: 22px;
+height: 22px;
+flex-shrink: 0;
+}
 .main-hero {
-  background: url('../img/Bg4.jpg') no-repeat center/cover;
+  background: url('/assets/img/Bg4.jpg') no-repeat center/cover;
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
-  max-width: 1080px;
+  max-width: 100%;
   margin: 0 auto;
   padding: 46px 24px 14px 24px;
   gap: 48px;
@@ -398,7 +403,7 @@ a:hover {
   justify-content: center;
   background-repeat: no-repeat; 
   background-size: cover;            /* ขยายเต็มพื้นที่ */
-  background-image: url('../Footerimg.png');
+  background-image: url('/IMG/Footerimg.png');
 }
 
 .abtc-banner-overlay h2 {
@@ -780,20 +785,7 @@ text-decoration: none;
 .nav-toggle.active span:nth-child(3) { transform: translateY(-8px) rotate(-45deg); }
 .nav-toggle span { transition: transform .18s ease, opacity .12s ease; }
 /* 900px */
-@media (max-width: 900px) {
-  .main-hero {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 20px;
-    padding: 20px 16px 80px 16px;
-  }
-  .signup-button {
-    position: static;
-    display: inline-flex;
-    margin: 6px 0 0 0;
-  }
-}
-/* ========== Mobile-first NAV ========== */
+========= Mobile-first NAV ========== */
 /* ค่าเริ่มต้น = มือถือ */
 .nav-toggle{
   display:inline-flex; align-items:center; justify-content:center;
@@ -828,15 +820,27 @@ text-decoration: none;
 .nav-toggle.active span:nth-child(3){ transform: translateY(-8px) rotate(-45deg); }
 
 /* ========== Desktop overrides (จอใหญ่ค่อยซ่อน hamburger) ========== */
-@media (min-width: 901px){
-  .nav-toggle{ display:none; }
-  .nav{
-    position:static; display:flex; width:auto; height:auto; padding:0;
-    box-shadow:none; border:0; background:transparent; overflow:visible;
-    flex-direction:row; gap:8px;
+@media (min-width:901px){
+  .header-container{
+    display: grid;
+    grid-template-columns: auto 1fr auto;  /* โลโก้ | กลางยืด | ปุ่ม */
+    align-items: center;
+    column-gap: 24px;
   }
-  .nav a{ background:transparent; margin:0; padding:8px 12px; font-weight:600; }
-  .nav-backdrop{ display:none !important; }
+
+  .logo-link{ grid-column: 1; }
+
+  .nav{
+    grid-column: 2;
+    justify-self: center;    /* จัดเมนูให้อยู่กึ่งกลาง */
+    width: max-content;      /* ให้กว้างเท่าที่เมนูใช้ ไม่ยืดเต็มแถว */
+  }
+
+  .login-btn{
+    grid-column: 3;
+    justify-self: end;
+    margin-left: 0;          /* ยกเลิก auto-margin เดิม */
+  }
 }
 
 .nav{ position: fixed; z-index: 10001; }     /* เมนู */
@@ -903,18 +907,6 @@ text-decoration: none;
   padding:14px 12px; margin-bottom:10px; border-radius:12px; background:#f6f8fb; text-decoration:none;
 }
 .nav a:hover{ background:#eaf0ff; }
-
-/* Desktop: ซ่อนปุ่ม + เมนูแผ่แนวนอน */
-@media (min-width: 901px){
-  .nav-toggle{ display:none; }
-  .nav{
-    position: static; transform:none; opacity:1; visibility:visible; pointer-events:auto;
-    display:flex; flex-direction:row; gap:8px; padding:0; box-shadow:none; border:0; background:transparent; overflow:visible;
-  }
-  .nav a{ background:transparent; margin:0; padding:8px 12px; font-weight:600; }
-  .nav-backdrop{ display:none !important; }
-}
-
 :root{
   --abtc-nav-width: min(86vw, 340px);
 }
@@ -1038,28 +1030,58 @@ text-decoration: none;
 .nav-toggle.active .line1{ transform: translateY(5px) rotate(45deg); }
 .nav-toggle.active .line3{ transform: translateY(-5px) rotate(-45deg); }
 
-/* ซ่อน hamburger บนเดสก์ท็อปแบบบังคับ */
-@media (min-width: 901px){
-  #navToggle{ display: none !important; }
-}
-@media (min-width: 1024px){
-  #navToggle{ display: none !important; }
-}
-
-/* Backdrop โปร่งใส ไม่มีหม่น ไม่มีเบลอ */
-#navBackdrop{
-  background: transparent !important;
-  backdrop-filter: none !important;
-  -webkit-backdrop-filter: none !important;
+/* ===== Header layout: Grid ซ้าย-กลาง-ขวา ===== */
+.header { background:#fff; border-bottom:1px solid #e3e8ef; position:sticky; top:0; z-index:1000; }
+.header-container{
+  max-width: 1200px;            /* ปรับได้ตามดีไซน์ */
+  margin: 0 auto;
+  padding: 10px 24px 8px;
+  display: grid;
+  grid-template-columns: auto 1fr auto;  /* โลโก้ | เมนู(กึ่งกลาง) | ปุ่มขวา */
+  align-items: center;
+  gap: 16px;
 }
 
-/* เมนูต้องคมชัด ไม่โปร่ง ไม่ฟิลเตอร์ */
+/* โลโก้คงเดิม */
+.logo{ height:80px; }
+
+/* ===== Mobile-first: เมนูเป็น drawer ===== */
 #siteNav{
-  background: #ffffff !important;
-  opacity: 1 !important;
-  filter: none !important;
+  position: fixed; inset: 0 0 0 auto; width: min(86vw,340px);
+  display: none; flex-direction: column; padding:14px;
+  background:#fff; border-left:1px solid #eaeaea; box-shadow:-18px 0 40px rgba(0,0,0,.18);
+  transform: translateX(100%); opacity:0; visibility:hidden; pointer-events:none;
+  transition: transform .22s ease, opacity .22s ease, visibility 0s linear .22s;
+}
+#siteNav.is-open{ display:flex; transform:none; opacity:1; visibility:visible; pointer-events:auto; transition: transform .22s, opacity .22s; }
+#siteNav a{ font-size:1.06rem; font-weight:700; color:#162032; padding:14px 12px; margin-bottom:10px; border-radius:12px; background:#f6f8fb; text-decoration:none; }
+#siteNav a:hover{ background:#eaf0ff; }
+
+#navToggle{ display:inline-flex; align-items:center; justify-content:center; width:40px; height:40px; border:0; background:transparent; cursor:pointer; }
+#navToggle span{ width:22px; height:2px; background:#0f223d; display:block; margin:4px 0; transition:transform .18s, opacity .12s; }
+#navToggle.active span:nth-child(1){ transform: translateY(8px) rotate(45deg); }
+#navToggle.active span:nth-child(2){ opacity:0; }
+#navToggle.active span:nth-child(3){ transform: translateY(-8px) rotate(-45deg); }
+
+#navBackdrop{ position:fixed; inset:0; background:rgba(15,18,23,.45); z-index:9000; }
+#navBackdrop[hidden]{ display:none; }
+
+/* ===== Desktop overrides (>=901px): เมนูอยู่ "กลางจริง" ===== */
+@media (min-width:901px){
+  #navToggle{ display:none; }
+  #navBackdrop{ display:none !important; }
+
+  /* ล้างโหมด drawer */
+  #siteNav{
+    position: static; transform:none; opacity:1; visibility:visible; pointer-events:auto;
+    display:flex; flex-direction:row; gap:12px; width:auto; height:auto;
+    padding:0; border:0; box-shadow:none; background:transparent; overflow:visible;
+    justify-self: center;                 /* << กึ่งกลางคอลัมน์กลาง */
+  }
+  #siteNav a{ background:transparent; margin:0; padding:8px 12px; font-weight:600; color:#162032; }
+
+  .login-wrapper{ justify-self: end; }    /* ปุ่มกลุ่มขวา */
 }
 
-
-
-
+/* ไฮไลต์ลิงก์หน้าเดียวกัน */
+#siteNav a[aria-current="page"]{ background:#eaf0ff; outline:2px solid #c9dbff; border-radius:8px; }
