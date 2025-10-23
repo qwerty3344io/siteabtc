@@ -208,5 +208,6 @@
   }
   .hero-right .hero-logos img{ height:50px; width:auto; }
 }
-
+/* kill the blocker */
+#navBackdrop, .nav-backdrop { display: none !important; }
 
