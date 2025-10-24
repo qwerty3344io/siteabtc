@@ -48,7 +48,7 @@
   .main-hero{
     display:block;
     padding: 18px 14px 90px;
-    background: url('/assets/img/bgmobile.png') no-repeat center/cover;
+    background: url('../img/bgmobile.png') no-repeat center/cover;
   }
   .hero-title{ font-size:1.5rem; margin-top:6px; }
   .hero-desc{  font-size:1rem; opacity:.95; }
