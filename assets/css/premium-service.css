@@ -98,7 +98,7 @@ flex-shrink: 0;
 .login-btn:hover { background: #e0e0e0; }
 
 .main-hero {
-  background: url('/assets/img/Bg2.jpg') no-repeat center/cover;
+  background: url('../img/Bg2.jpg') no-repeat center/cover;
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
@@ -1069,4 +1069,5 @@ flex-shrink: 0;
 
 /* ไฮไลต์ลิงก์หน้าเดียวกัน */
 #siteNav a[aria-current="page"]{ background:#eaf0ff; outline:2px solid #c9dbff; border-radius:8px; }
+
 
