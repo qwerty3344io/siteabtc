@@ -103,7 +103,7 @@ flex-shrink: 0;
 }
 
 .main-hero {
-  background: url('/assets/img/Bg3.jpg') no-repeat center/cover;
+  background: url('../img/Bg3.jpg') no-repeat center/cover;
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
@@ -1107,3 +1107,4 @@ text-decoration: none;
 
 /* ไฮไลต์ลิงก์หน้าเดียวกัน */
 #siteNav a[aria-current="page"]{ background:#eaf0ff; outline:2px solid #c9dbff; border-radius:8px; }
+
